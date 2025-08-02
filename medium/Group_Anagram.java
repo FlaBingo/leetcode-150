@@ -24,6 +24,7 @@ public class Group_Anagram {
   }
 
   // 27th of July 2025 --- I've no idea wtf is happening exactly tbh.
+  // 29th of July 2025 --- I understood everything what's exactly going on here. 
   static List<List<String>> groupAnagram(String[] strs) {
     if (strs.length == 0) {
       return new ArrayList<>();
@@ -38,7 +39,7 @@ public class Group_Anagram {
       StringBuilder sb = new StringBuilder("");
 
       for (int i = 0; i < 26; i++) {
-        sb.append(""); // no idea what's happening
+        sb.append("#"); 
         sb.append(count[i]);
       }
       String key = sb.toString();
