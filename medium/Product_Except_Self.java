@@ -18,13 +18,31 @@ import java.util.Arrays;
 
 public class Product_Except_Self {
   public static void main(String[] args) {
-    // int[] nums = { 1, 2, 3, 4 };
-    int[] nums = { -1, 1, 0, -3, 3};
+    int[] nums = { 1, 2, 3, 4 };
+    // int[] nums = { -1, 1, 0, -3, 3};
     System.out.println(Arrays.toString(brute_force(nums)));
+    System.out.println(Arrays.toString(better_approach(nums)));
   }
 
   static int[] better_approach(int[] nums) {
-    
+    int n = nums.length;
+    int[] pre = new int[n];
+    int[] post = new int[n];
+    int[] result = new int[n];
+    for (int i = 0; i < nums.length; i++) {
+      int index = (nums.length - 1) - i;
+      if (i == 0) {
+        pre[i] = 1;
+        post[index + i] = 1;
+      } else {
+        pre[i] = nums[i - 1] * pre[i - 1];
+        post[index] = nums[index + 1] * post[index + 1];
+      }
+    }
+    for (int i = 0; i < nums.length; i++) {
+      result[i] = pre[i] * post[i];
+    }
+    return result;
   }
 
   // ----------------------------Time Limit Exceeded
