@@ -24,6 +24,12 @@ public class Product_Except_Self {
     System.out.println(Arrays.toString(better_approach(nums)));
   }
 
+
+  static int[] optimal_solution(int[] nums) {
+    return new int[]{};
+  }
+
+  // ----------------------------beats 5% with 4ms
   static int[] better_approach(int[] nums) {
     int n = nums.length;
     int[] pre = new int[n];
