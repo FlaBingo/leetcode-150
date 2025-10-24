@@ -60,6 +60,7 @@ public class isValidSudoku {
     // the Java Collections Framework. It provides a collection that stores only
     // unique elements and does not maintain any specific order for these elements.
 
+
     HashSet<Character>[] rows = new HashSet[N];
     HashSet<Character>[] cols = new HashSet[N];
     HashSet<Character>[] boxes = new HashSet[N];
